@@ -1,52 +1,68 @@
 package edu.swjtuhc.demo.model;
 
 public class SysUser {
-	private int UId;
-	private String username;
-	private String password;
-	private String name;
-	private int age;
-	private String gender;
+	private int u_id;
+	private String u_name;
+	private String u_password;
+	private String u_nickname;
+	private int u_age;
+	private String u_sex;
+	private String u_email;
+	private String u_phone;
+
+	public String getU_email() {
+		return u_email;
+	}
+	public void setU_email(String u_email) {
+		this.u_email = u_email;
+	}
+	public String getU_phone() {
+		return u_phone;
+	}
+	public void setU_phone(String u_phone) {
+		this.u_phone = u_phone;
+	}
 	public String getUsername() {
-		return username;
+		return u_name;
 	}
 	public void setUsername(String username) {
-		this.username = username;
+		this.u_name = username;
 	}
 	public String getPassword() {
-		return password;
+		return u_password;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.u_password = password;
 	}
 	public String getName() {
-		return name;
+		return u_nickname;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.u_nickname = name;
 	}
 	public int getAge() {
-		return age;
+		return u_age;
 	}
 	public void setAge(int age) {
-		this.age = age;
+		this.u_age = age;
 	}
 	public String getGender() {
-		return gender;
+		return u_sex;
 	}
 	public void setGender(String gender) {
-		this.gender = gender;
+		this.u_sex = gender;
 	}
 	public int getUId() {
-		return UId;
+		return u_id;
 	}
 	public void setUId(int uId) {
-		UId = uId;
+		u_id = uId;
 	}
 	@Override
 	public String toString() {
-		return "SysUser [UId=" + UId + ", username=" + username + ", password=" + password + ", name=" + name + ", age="
-				+ age + ", gender=" + gender + "]";
+		return "SysUser [u_id=" + u_id + ", u_name=" + u_name + ", u_password=" + u_password + ", u_nickname="
+				+ u_nickname + ", u_age=" + u_age + ", u_sex=" + u_sex + ", u_email=" + u_email + ", u_phone=" + u_phone
+				+ "]";
 	}
 	
 	
