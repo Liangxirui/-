@@ -3,9 +3,8 @@ package edu.swjtuhc.demo.model;
 public class SysUser {
 	private int u_id;
 	private String u_name;
-	private String u_password;
 	private String u_nickname;
-	private int u_age;
+	private String u_password;
 	private String u_sex;
 	private String u_email;
 	private String u_phone;
@@ -40,12 +39,7 @@ public class SysUser {
 	public void setName(String name) {
 		this.u_nickname = name;
 	}
-	public int getAge() {
-		return u_age;
-	}
-	public void setAge(int age) {
-		this.u_age = age;
-	}
+
 	public String getGender() {
 		return u_sex;
 	}
@@ -61,7 +55,7 @@ public class SysUser {
 	@Override
 	public String toString() {
 		return "SysUser [u_id=" + u_id + ", u_name=" + u_name + ", u_password=" + u_password + ", u_nickname="
-				+ u_nickname + ", u_age=" + u_age + ", u_sex=" + u_sex + ", u_email=" + u_email + ", u_phone=" + u_phone
+				+ u_nickname + ", u_sex=" + u_sex + ", u_email=" + u_email + ", u_phone=" + u_phone
 				+ "]";
 	}
 	

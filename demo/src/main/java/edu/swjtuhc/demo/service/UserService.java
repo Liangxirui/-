@@ -16,6 +16,5 @@ public interface UserService {
 	
 	 int edit(SysUser sysUser); // 修改
 
-	List<SysUser> listM();
 
 }

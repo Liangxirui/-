@@ -4,14 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.swjtuhc.demo.model.SysUser;
 import edu.swjtuhc.demo.service.UserService;
 
-@RestController
-@RequestMapping("/user")
+@Controller
+@RequestMapping("")
 public class UserController {
 	@Autowired
 	UserService userService;
@@ -35,8 +35,8 @@ public class UserController {
  
 	// 查询明细
 	@RequestMapping("get")
-	public ModelAndView get(int id) {
-		SysUser c = userService.get(id);
+	public ModelAndView get(int u_id) {
+		SysUser c = userService.get(u_id);
 		ModelAndView mav = new ModelAndView("detail");
 		mav.addObject("c", c);
 		return mav;
@@ -44,8 +44,8 @@ public class UserController {
  
 	// 单条明细修改跳转到修改页面
 	@RequestMapping("editgo")
-	public ModelAndView editgo(int id) {
-		SysUser c = userService.get(id);
+	public ModelAndView editgo(int u_id) {
+		SysUser c = userService.get(u_id);
 		ModelAndView mav = new ModelAndView("edit");
 		mav.addObject("c", c);
 		return mav;
@@ -61,8 +61,8 @@ public class UserController {
  
 	// 删除
 	@RequestMapping("delete")
-	public ModelAndView delete(int id) {
-		userService.delete(id);
+	public ModelAndView delete(int u_id) {
+		userService.delete(u_id);
 		ModelAndView mav = new ModelAndView("redirect:/list");
 		return mav;
 	}

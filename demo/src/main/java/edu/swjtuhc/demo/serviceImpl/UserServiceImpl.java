@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 import edu.swjtuhc.demo.mapper.UserMapper;
 import edu.swjtuhc.demo.model.SysUser;
 import edu.swjtuhc.demo.service.UserService;
+
+
 @Service
-public class  UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService{
 		@Autowired
 		UserMapper userMapper;
 		
@@ -37,10 +39,6 @@ public class  UserServiceImpl implements UserService{
 		public int edit(SysUser sysUser) {
 			// TODO Auto-generated method stub
 			return userMapper.editM(sysUser);
-		}
-		public List<SysUser> listM() {
-			// TODO Auto-generated method stub
-			return null;
 		}
 	 
 }
