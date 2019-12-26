@@ -13,8 +13,34 @@ public class  UserServiceImpl implements UserService{
 		@Autowired
 		UserMapper userMapper;
 		
-		@Override
-		public List<SysUser> getAllUsers(){
+		public List<SysUser> list(){
 			return userMapper.listM();
 		}
+		public SysUser get(int u_id) {
+			// TODO Auto-generated method stub
+			return userMapper.getM(u_id);
+		}
+	 
+		@Override
+		public int add(SysUser sysUser) {
+			// TODO Auto-generated method stub
+			return userMapper.addM(sysUser);
+		}
+	 
+		@Override
+		public void delete(int u_id) {
+			// TODO Auto-generated method stub
+			userMapper.deleteM(u_id);
+		}
+	 
+		@Override
+		public int edit(SysUser sysUser) {
+			// TODO Auto-generated method stub
+			return userMapper.editM(sysUser);
+		}
+		public List<SysUser> listM() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	 
 }
