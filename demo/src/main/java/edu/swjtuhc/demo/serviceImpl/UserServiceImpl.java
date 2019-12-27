@@ -10,7 +10,8 @@ import edu.swjtuhc.demo.model.SysUser;
 import edu.swjtuhc.demo.service.UserService;
 
 
-@Service
+@Service("")
+
 public class UserServiceImpl implements UserService{
 		@Autowired
 		UserMapper userMapper;

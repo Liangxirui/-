@@ -17,14 +17,14 @@ public class UserController {
 	UserService userService;
  
 	// 返回
-	@RequestMapping("fanhui")
+	@RequestMapping("/fanhui")
 	public ModelAndView fanhui() {
 		ModelAndView mav = new ModelAndView("redirect:/list");
 		return mav;
 	}
  
 	// 查询列表
-	@RequestMapping("list")
+	@RequestMapping("/list")
 	public ModelAndView list() {
 		ModelAndView mav = new ModelAndView();
 		List<SysUser> ls = userService.list();
@@ -34,7 +34,7 @@ public class UserController {
 	}
  
 	// 查询明细
-	@RequestMapping("get")
+	@RequestMapping("/get")
 	public ModelAndView get(int u_id) {
 		SysUser c = userService.get(u_id);
 		ModelAndView mav = new ModelAndView("detail");
@@ -43,7 +43,7 @@ public class UserController {
 	}
  
 	// 单条明细修改跳转到修改页面
-	@RequestMapping("editgo")
+	@RequestMapping("/editgo")
 	public ModelAndView editgo(int u_id) {
 		SysUser c = userService.get(u_id);
 		ModelAndView mav = new ModelAndView("edit");
@@ -52,7 +52,7 @@ public class UserController {
 	}
  
 	// 修改
-	@RequestMapping("edit")
+	@RequestMapping("/edit")
 	public ModelAndView edit(SysUser sysUser) {
 		userService.edit(sysUser);
 		ModelAndView mav = new ModelAndView("redirect:/list");
@@ -60,22 +60,22 @@ public class UserController {
 	}
  
 	// 删除
-	@RequestMapping("delete")
+	@RequestMapping("/delete")
 	public ModelAndView delete(int u_id) {
 		userService.delete(u_id);
 		ModelAndView mav = new ModelAndView("redirect:/list");
 		return mav;
 	}
  
-	// 添加   跳转 到添加页面
-	@RequestMapping("addgo")
+	// 添加  跳转 到添加页面
+	@RequestMapping("/addgo")
 	public ModelAndView addgo() {
 		ModelAndView mav = new ModelAndView("add");
 		return mav;
 	}
  
 	// 添加数据
-	@RequestMapping("add")
+	@RequestMapping("/add")
 	public ModelAndView add(SysUser sysUser) {
 		userService.add(sysUser);
 		ModelAndView mav = new ModelAndView("redirect:/list");
