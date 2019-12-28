@@ -10,7 +10,7 @@
 		select * from user 
 	</select>
  
-	<select id="getM" parameterType="int" resultType="SysUser">
+	<select id="getM" parameterType="_int" resultType="SysUser">
 		select * from users where u_id= #{u_id}
 	</select>
  

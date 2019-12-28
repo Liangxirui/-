@@ -8,9 +8,8 @@ import edu.swjtuhc.demo.model.SysUser;
 
 @Mapper
 public interface UserMapper {
-		public List<SysUser> selectAllUsers();//查询所有
-		public List<SysUser> listM();
-		
+		public List<SysUser> listM();//查询所有
+
 		public SysUser getM(int u_id); // 查询单条
 
 		public int addM(SysUser sysUser); // 添加

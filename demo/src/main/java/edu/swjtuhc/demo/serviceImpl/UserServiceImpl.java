@@ -10,15 +10,18 @@ import edu.swjtuhc.demo.model.SysUser;
 import edu.swjtuhc.demo.service.UserService;
 
 
+
 @Service("")
 
 public class UserServiceImpl implements UserService{
 		@Autowired
 		UserMapper userMapper;
 		
+		@Override		
 		public List<SysUser> list(){
 			return userMapper.listM();
 		}
+		@Override		
 		public SysUser get(int u_id) {
 			// TODO Auto-generated method stub
 			return userMapper.getM(u_id);
