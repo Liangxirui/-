@@ -1,0 +1,38 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+	<resultMap id="result" type="com.example.demo.entity.User">
+		<result property="u_name" column="u_name" />
+		<result property="u_nickname" column="u_nickname" />
+		<result property="u_password" column="u_password" />
+		<result property="u_sex" column="u_sex"/>
+		<result property="u_email" column="u_email" />
+		<result property="u_phone" column="u_phone" />
+ 
+	</resultMap>
+ 
+	<select id="ListUser" resultMap="result">
+		SELECT * FROM user
+	</select>
+ 
+	<select id="findUserByName" resultMap="result">
+		SELECT * FROM user where u_name=#{u_name}
+	</select>
+ 
+	<insert id="insertUser" parameterType="com.example.demo.entity.User"
+		keyProperty="u_id" useGeneratedKeys="true">
+		
+		insert into  user (u_name,u_nickname,u_password,u_sex,u_email,u_phone)
+	  VALUES(#{u_name},#{u_nickname},#{u_password},#{u_sex},#{u_email},#{u_phone})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete from user where u_id=#{u_id}
+	</delete>
+	
+	<update id="Update" parameterType="com.example.demo.entity.User">
+	update user set user.u_name=#{u_name},u_nickname=#{u_nickname},u_password=#{u_password},u_sex=#{u_sex},u_email=#{u_email},u_phone=#{u_phone}   where u_id= #{u_id}
+	</update>
+</mapper>
