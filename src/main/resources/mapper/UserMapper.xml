@@ -33,6 +33,6 @@
 	</delete>
 	
 	<update id="Update" parameterType="com.example.demo.entity.User">
-	update user set user.u_name=#{u_name},u_nickname=#{u_nickname},u_password=#{u_password},u_sex=#{u_sex},u_email=#{u_email},u_phone=#{u_phone}   where u_id= #{u_id}
+	update user set u_name=#{u_name},u_nickname=#{u_nickname},u_password=#{u_password},u_sex=#{u_sex},u_email=#{u_email},u_phone=#{u_phone}   where u_id= #{u_id}
 	</update>
 </mapper>
