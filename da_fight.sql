@@ -75,7 +75,7 @@ CREATE TABLE `ord_form`  (
   `o_id` int(10) NOT NULL COMMENT '对象ID',
   `ord_amount` int(4) NOT NULL COMMENT '订单金额',
   `ord_status` int(4) NOT NULL COMMENT '订单状态（0在处理3已完成）',
-  `ord_addtime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `ord_addtime` varchar(10) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`ord_id`) USING BTREE,
   INDEX `or_user`(`u_id`) USING BTREE,
   INDEX `or_obj`(`o_id`) USING BTREE,
