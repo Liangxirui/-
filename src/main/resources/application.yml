@@ -7,5 +7,3 @@ spring:
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
   type-aliases-package: com.example.demo.mapper
-#file:
-#  dir: E:\\Area\\anhui           //本地地址

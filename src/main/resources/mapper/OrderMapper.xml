@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.OrderMapper">
+	<resultMap id="result" type="com.example.demo.entity.Order">
+		<result property="u_id" column="u_id" />
+		<result property="o_id" column="o_id" />
+		<result property="ord_amount" column="ord_amount" />
+		<result property="ord_status" column="ord_status" />
+		<result property="ord_addtime" column="ord_addtime" />
+ 
+	</resultMap>
+ 
+	<select id="ListOrder" resultMap="result">
+		SELECT * FROM ord_form
+	</select>
+ 
+	<select id="findOrderByID" resultMap="result">
+		SELECT * FROM ord_form where ord_id=#{o_id}
+	</select>
+ 
+	<insert id="insertOrder" parameterType="com.example.demo.entity.Order"
+		keyProperty="ord_id" useGeneratedKeys="true">
+		
+		insert into  ord_form (ord_id,u_id,o_id,ord_amount,ord_status,ord_addtime)
+	  VALUES(#{ord_id},#{u_id},#{o_id},#{ord_amount},#{ord_status},#{ord_addtime})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete from ord_form where ord_id=#{o_id}
+	</delete>
+	
+	<update id="Update" parameterType="com.example.demo.entity.Order">
+	update ord_form set ord_amount=#{ord_amount},ord_status=#{ord_status},ord_addtime=#{ord_addtime}  where ord_id= #{ord_id}
+	</update>
+</mapper>

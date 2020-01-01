@@ -53,5 +53,6 @@ import com.example.demo.service.UserService;
 		public List<User> ListUserByname(String u_name){
 			return userservice.findByName(u_name);
 		}
+		
 	}
 

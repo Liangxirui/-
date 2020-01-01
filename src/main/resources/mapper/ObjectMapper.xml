@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ObjectMapper">
+	<resultMap id="result" type="com.example.demo.entity.Object">
+		<result property="o_name" column="o_name" />
+		<result property="o_nickname" column="o_nickname" />
+		<result property="o_password" column="o_password" />
+		<result property="o_sex" column="o_sex"/>
+		<result property="o_email" column="o_email" />
+		<result property="o_phone" column="o_phone" />
+ 		<result property="o_type" column="o_type" />
+ 
+	</resultMap>
+ 
+	<select id="ListObject" resultMap="result">
+		SELECT * FROM object
+	</select>
+ 
+	<select id="findObjectByName" resultMap="result">
+		SELECT * FROM object where o_name=#{o_name}
+	</select>
+ 
+	<insert id="insertObject" parameterType="com.example.demo.entity.Object"
+		keyProperty="o_id" useGeneratedKeys="true">
+		
+		insert into  object (o_name,o_nickname,o_password,o_sex,o_email,o_phone,o_type)
+	  VALUES(#{o_name},#{o_nickname},#{o_password},#{o_sex},#{o_email},#{o_phone},#{o_type})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete from object where o_id=#{o_id}
+	</delete>
+	
+	<update id="Update" parameterType="com.example.demo.entity.Object">
+	update object set o_name=#{o_name},o_nickname=#{o_nickname},o_password=#{o_password},o_sex=#{o_sex},o_email=#{o_email},o_phone=#{o_phone},o_type=#{o_type}   where o_id= #{o_id}
+	</update>
+</mapper>
